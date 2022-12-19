@@ -1,0 +1,8 @@
+{
+  "smtp_server": "smtp.gmail.com",
+  "from": "Another One <another@one.com",
+  "to": "First Last first@last.com",
+  "subject": "great subject",
+  "interval": 3600,
+  "messages": ["one", "two", "three"]
+}
