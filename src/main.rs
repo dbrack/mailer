@@ -31,13 +31,13 @@ fn main() -> Result<(), Box<dyn Error>> {
         )));
     }
 
-    let file = File::open(args[1].as_str()).unwrap();
-    let config: Config = serde_json::from_reader(file).unwrap();
-
     let smtp_username =
         env::var("GMAIL_USERNAME").expect("GMAIL_USERNAME environment variable not set");
     let smtp_password =
         env::var("GMAIL_PASSWORD").expect("GMAIL_PASSWORD environment variable not set");
+
+    let file = File::open(args[1].as_str()).unwrap();
+    let config: Config = serde_json::from_reader(file).unwrap();
 
     println!(
         "{} Daemon started successfully",
