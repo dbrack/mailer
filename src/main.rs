@@ -46,7 +46,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     loop {
         // by default,trigger at least once every 60 minutes
-        let sleep_time = rand::thread_rng().gen_range(1..config.interval);
+        let sleep_time = rand::thread_rng().gen_range(1..Some(config.interval).unwrap_or(3600));
         println!(
             "{} Sleeping for {} seconds",
             Local::now().format(TIME_FORMAT).to_string(),
