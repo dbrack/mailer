@@ -36,7 +36,8 @@ fn main() -> Result<(), Box<dyn Error>> {
     let smtp_password =
         env::var("SMTP_PASSWORD").expect("SMTP_PASSWORD environment variable not set");
 
-    let file = File::open(args[1].as_str()).unwrap();
+    let file_path = Some(args[1].as_str()).unwrap_or("config.example.json");
+    let file = File::open(file_path).unwrap();
     let config: Config = serde_json::from_reader(file).unwrap();
 
     println!(

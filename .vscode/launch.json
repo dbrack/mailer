@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Debug",
       "program": "${workspaceFolder}/<executable file>",
-      "args": ["", "config.json"],
+      "args": [],
       "cwd": "${workspaceFolder}"
     }
   ]
